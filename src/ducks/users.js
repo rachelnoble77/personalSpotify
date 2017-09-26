@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 const initialState = {
     user: {}
 }
@@ -8,7 +9,7 @@ const GET_USER = 'GET_USER';
 export function getUser() {
     const user = axios.get('/auth/user')
         .then( res => {
-            return res.data;
+            return res.data[0];
         })
     return {
         type: GET_USER,

@@ -31,23 +31,24 @@ passport.use( new Auth0Strategy({
 
     db.get_user([profile.identities[0].user_id + '']).then (user => {
         if (user[0]) {
-            done(null, user[0].id)
+            done(null, user[0])
         } else {
             db.create_user([profile.displayName, profile.emails[0].value, 
             profile.identities[0].user_id]).then (user => {
-                done(null, user[0].id)
+                done(null, user[0])
             })
         }
     })
 }))
 
-passport.serializeUser(function(userId, done) {
-    done(null, userId);
+passport.serializeUser(function(user, done) {
+    done(null, user);
 })
 
-passport.deserializeUser(function(userId, done) {
-    app.get('db').current_user([userId]).then (user => {
-        done(null, user[0]);
+passport.deserializeUser(function(user, done) {
+   
+    app.get('db').current_user(user.id).then (user => {
+        done(null, user);
     })
 })
 
@@ -60,17 +61,15 @@ app.get('/auth/callback', passport.authenticate('auth0', {
 
 app.get('/auth/user', (req, res, next) => {
     if (!req.user) {
-        console.log('no user');
-        return res.status(400).sendStatus('User not found');
+        res.sendStatus(404);
     } else {
-        console.log('new user');
-        return res.status(200).send(req.user);
+       res.status(200).send(req.user)
     }
 })
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect(302, 'http://localhost:3030/')
+    res.redirect(302, 'http://localhost:3000/')
 })
 
 const PORT = 3030;
