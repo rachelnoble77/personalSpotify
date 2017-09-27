@@ -12,7 +12,8 @@ export default class Login extends Component {
                 To get started, continue building out...
                 </p>
                 <a href={ process.env.REACT_APP_LOGIN }>
-                            <button>Login</button></a>
+                    <button>Login</button></a>
+                    <iframe src="https://open.spotify.com/embed?uri=spotify:track:6V3cRxxIGT5mOJX0xjjjqn" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
             </div>
         )
     }
