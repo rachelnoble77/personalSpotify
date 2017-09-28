@@ -16,11 +16,14 @@ class Private extends Component {
     render() {
         return (
             <div className=''>
-                <h1>beginning of Spotify App...</h1><hr />
+                <a href='http://localhost:3030/auth/logout'><button>Logout</button></a>
+                <h1>Beginning of Spotify App...</h1><hr />
                 <p>Username: { this.props.user ? this.props.user.user_name : null }</p>
                 <p>Email: { this.props.user ? this.props.user.email : null }</p>
                 <p>ID: { this.props.user ? this.props.user.auth_id : null }</p>
-                <a href='http://localhost:3030/auth/logout'><button>Logout</button></a>
+                <a href="/login"><button>Log in with Spotify</button></a>
+                <iframe title="starwars" src="https://open.spotify.com/embed?uri=spotify:user:official_star_wars:playlist:69BOXIItwwyxTgdz6flzvU" 
+                    width="300" height="380" frameBorder="0" allowTransparency="true"></iframe>
             </div>
         )
     }
