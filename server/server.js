@@ -62,10 +62,23 @@ passport.use(new SpotifyStrategy({
     callbackURL: "http://localhost:3030/auth/spotify/callback"
   },
     function(accessToken, refreshToken, profile, done) {
+
+        const db = app.get('db');
+        
+            db.get_user([profile.id + '']).then (user => {
+                if (user[0]) {
+                    done(null, user[0])
+                } else {
+                    db.create_user([profile.displayName, profile.emails[0].value, 
+                    profile.id]).then (user => {
+                        done(null, user[0])
+                    })
+                }
+            })
+
         // User.findOrCreate({ spotifyId: profile.id }, function (err, user) {
         //     return done(err, user);
         // });
-        console.log(profile)
         process.nextTick(function() {
             return done(null, profile);
         });

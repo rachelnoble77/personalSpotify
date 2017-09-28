@@ -1,0 +1,25 @@
+const profile = { 
+    provider: 'spotify',
+    id: '1239007289',
+    username: '1239007289',
+    displayName: 'Rachel Noble',
+    profileUrl: 'https://open.spotify.com/user/1239007289',
+    photos: [ 'https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/1044860_10151430527467251_2000364775_n.jpg?oh=3073081abffc7e39e6cf53399247b633&oe=5A576CFC' ],
+    country: 'US',
+    followers: 12,
+    product: 'premium',
+    _raw: '{\n  "country" : "US",\n  "display_name" : "Rachel Noble",\n  "email" : "rachel.noble77@gmail.com",\n  "external_urls" : {\n    "spotify" : "https://open.spotify.com/user/1239007289"\n  },\n  "followers" : {\n    "href" : null,\n    "total" : 12\n  },\n  "href" : "https://api.spotify.com/v1/users/1239007289",\n  "id" : "1239007289",\n  "images" : [ {\n    "height" : null,\n    "url" : "https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/1044860_10151430527467251_2000364775_n.jpg?oh=3073081abffc7e39e6cf53399247b633&oe=5A576CFC",\n    "width" : null\n  } ],\n  "product" : "premium",\n  "type" : "user",\n  "uri" : "spotify:user:1239007289"\n}',
+    _json:
+        { country: 'US',
+        display_name: 'Rachel Noble',
+        email: 'rachel.noble77@gmail.com',
+        external_urls: { spotify: 'https://open.spotify.com/user/1239007289' },
+        followers: { href: null, total: 12 },
+        href: 'https://api.spotify.com/v1/users/1239007289',
+        id: '1239007289',
+        images: [ [Object] ],
+        product: 'premium',
+        type: 'user',
+        uri: 'spotify:user:1239007289' },
+    emails: [ { value: 'rachel.noble77@gmail.com', type: null } ] 
+}
